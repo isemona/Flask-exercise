@@ -68,6 +68,29 @@ def say_hello():
     """
 
 #   
+@app.route("/choose")
+def choose_compliment_or_insult():
+    """User choose compliment or insult"""
+    # text = compliment or insult
+
+    # if name == "compliment"
+    # route to /compliment (input)
+    # route to /greeting (output to user)
+    # if name == "insult"
+    # route to /insult (input from user)
+    # route to /diss
+
+    
+    
+
+    # return """
+    # <!doctype html>
+    # <html>
+    #   <head>
+    #     <title>Hi There!</title>
+    #   </head>
+    #   <body>
+    #     <h1>Hi There!</h1>
 
 
 
