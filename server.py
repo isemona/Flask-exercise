@@ -18,7 +18,12 @@ AWESOMENESS = [
 def start_here():
     """Home page."""
 
-    return "<!doctype html><html>Hi! This is the home page.</html>"
+    return """<!doctype html>
+    <html>
+    <a href="/hello"> 
+    Hi! This is the home page.</a>
+    </html>
+    """
 
 
 @app.route("/hello")
@@ -33,9 +38,26 @@ def say_hello():
       </head>
       <body>
         <h1>Hi There!</h1>
-        <form action="/greet">
+        <form action="/greet" method="GET">
           What's your name? <input type="text" name="person">
-          <input type="submit" value="Submit">
+          <br>
+          Choose a compliment: 
+          <input type="radio" name="compliment" value="awesome">Awesome</input>
+          <input type="radio" name="compliment" value="terrific">Terrific</input>
+          <input type="radio" name="compliment" value="fantastic">Fantastic</input>
+          <input type="radio" name="compliment" value="neato">Neato</input>
+          <input type="radio" name="compliment" value="fantabulous">Fantabulous</input>
+          <input type="radio" name="compliment" value="wowza">Wowza</input>
+          <input type="radio" name="compliment" value="oh-so-not-meh">Oh-so-not-meh</input>
+          <input type="radio" name="compliment" value="brilliant">Brilliant</input>
+          <input type="radio" name="compliment" value="ducky">Ducky</input>
+          <input type="radio" name="compliment" value="coolio">Coolio</input>
+          <input type="radio" name="compliment" value="incredible">Incredible</input>
+          <input type="radio" name="compliment" value="wonderful">Wonderful</input>
+          <input type="radio" name="compliment" value="smashing">Smashing</input>
+          <input type="radio" name="compliment" value="lovely">Lovely</input>
+        <br>
+        <input type="submit" value="Submit">
         </form>
       </body>
     </html>
@@ -48,9 +70,9 @@ def greet_person():
 
     player = request.args.get("person")
 
-    compliment = choice(AWESOMENESS)
+    compliment = request.args.get("compliment")
 
-    y = x
+    # y = x
 
     return """
     <!doctype html>
@@ -68,4 +90,4 @@ def greet_person():
 if __name__ == "__main__":
     # debug=True gives us error messages in the browser and also "reloads"
     # our web app if we change the code.
-    app.run(debug=False, host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0")
