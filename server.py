@@ -38,9 +38,28 @@ def say_hello():
       </head>
       <body>
         <h1>Hi There!</h1>
-        <form action="/diss" method="GET">
+        <form action="/greet" method="GET">
           What's your name? <input type="text" name="person">
           <br>
+          Choose a compliment: 
+          <input type="radio" name="compliment" value="awesome">Awesome</input>
+          <input type="radio" name="compliment" value="terrific">Terrific</input>
+          <input type="radio" name="compliment" value="fantastic">Fantastic</input>
+          <input type="radio" name="compliment" value="neato">Neato</input>
+          <input type="radio" name="compliment" value="fantabulous">Fantabulous</input>
+          <input type="radio" name="compliment" value="wowza">Wowza</input>
+          <input type="radio" name="compliment" value="oh-so-not-meh">Oh-so-not-meh</input>
+          <input type="radio" name="compliment" value="brilliant">Brilliant</input>
+          <input type="radio" name="compliment" value="ducky">Ducky</input>
+          <input type="radio" name="compliment" value="coolio">Coolio</input>
+          <input type="radio" name="compliment" value="incredible">Incredible</input>
+          <input type="radio" name="compliment" value="wonderful">Wonderful</input>
+          <input type="radio" name="compliment" value="smashing">Smashing</input>
+          <input type="radio" name="compliment" value="lovely">Lovely</input>
+        <br>
+        <input type="submit" value="Submit">
+        </form>
+        <form action="/diss" method="GET">
         Type out your insult here: <input type="text" name="insult">
         <input type="submit" value="Submit">
         </form>
@@ -48,22 +67,7 @@ def say_hello():
     </html>
     """
 
-#   Choose a compliment: 
-#   <input type="radio" name="compliment" value="awesome">Awesome</input>
-#   <input type="radio" name="compliment" value="terrific">Terrific</input>
-#   <input type="radio" name="compliment" value="fantastic">Fantastic</input>
-#   <input type="radio" name="compliment" value="neato">Neato</input>
-#   <input type="radio" name="compliment" value="fantabulous">Fantabulous</input>
-#   <input type="radio" name="compliment" value="wowza">Wowza</input>
-#   <input type="radio" name="compliment" value="oh-so-not-meh">Oh-so-not-meh</input>
-#   <input type="radio" name="compliment" value="brilliant">Brilliant</input>
-#   <input type="radio" name="compliment" value="ducky">Ducky</input>
-#   <input type="radio" name="compliment" value="coolio">Coolio</input>
-#   <input type="radio" name="compliment" value="incredible">Incredible</input>
-#   <input type="radio" name="compliment" value="wonderful">Wonderful</input>
-#   <input type="radio" name="compliment" value="smashing">Smashing</input>
-#   <input type="radio" name="compliment" value="lovely">Lovely</input>
-# <br>
+#   
 
 
 
