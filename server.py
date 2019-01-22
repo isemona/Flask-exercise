@@ -38,30 +38,33 @@ def say_hello():
       </head>
       <body>
         <h1>Hi There!</h1>
-        <form action="/greet" method="GET">
+        <form action="/diss" method="GET">
           What's your name? <input type="text" name="person">
           <br>
-          Choose a compliment: 
-          <input type="radio" name="compliment" value="awesome">Awesome</input>
-          <input type="radio" name="compliment" value="terrific">Terrific</input>
-          <input type="radio" name="compliment" value="fantastic">Fantastic</input>
-          <input type="radio" name="compliment" value="neato">Neato</input>
-          <input type="radio" name="compliment" value="fantabulous">Fantabulous</input>
-          <input type="radio" name="compliment" value="wowza">Wowza</input>
-          <input type="radio" name="compliment" value="oh-so-not-meh">Oh-so-not-meh</input>
-          <input type="radio" name="compliment" value="brilliant">Brilliant</input>
-          <input type="radio" name="compliment" value="ducky">Ducky</input>
-          <input type="radio" name="compliment" value="coolio">Coolio</input>
-          <input type="radio" name="compliment" value="incredible">Incredible</input>
-          <input type="radio" name="compliment" value="wonderful">Wonderful</input>
-          <input type="radio" name="compliment" value="smashing">Smashing</input>
-          <input type="radio" name="compliment" value="lovely">Lovely</input>
-        <br>
+        Type out your insult here: <input type="text" name="insult">
         <input type="submit" value="Submit">
         </form>
       </body>
     </html>
     """
+
+#   Choose a compliment: 
+#   <input type="radio" name="compliment" value="awesome">Awesome</input>
+#   <input type="radio" name="compliment" value="terrific">Terrific</input>
+#   <input type="radio" name="compliment" value="fantastic">Fantastic</input>
+#   <input type="radio" name="compliment" value="neato">Neato</input>
+#   <input type="radio" name="compliment" value="fantabulous">Fantabulous</input>
+#   <input type="radio" name="compliment" value="wowza">Wowza</input>
+#   <input type="radio" name="compliment" value="oh-so-not-meh">Oh-so-not-meh</input>
+#   <input type="radio" name="compliment" value="brilliant">Brilliant</input>
+#   <input type="radio" name="compliment" value="ducky">Ducky</input>
+#   <input type="radio" name="compliment" value="coolio">Coolio</input>
+#   <input type="radio" name="compliment" value="incredible">Incredible</input>
+#   <input type="radio" name="compliment" value="wonderful">Wonderful</input>
+#   <input type="radio" name="compliment" value="smashing">Smashing</input>
+#   <input type="radio" name="compliment" value="lovely">Lovely</input>
+# <br>
+
 
 
 @app.route("/greet")
@@ -87,7 +90,35 @@ def greet_person():
     """.format(player, compliment)
 
 
+@app.route("/diss")
+def diss_person():
+    """Dish out an insult"""
+
+    player = request.args.get("person")
+
+    insult = request.args.get("insult")
+
+    return """
+    <!doctype html>
+    <html>
+      <head>
+        <title>An Insult</title>
+      </head>
+      <body>
+        Hi, {}! Did you know you're a {}!
+      </body>
+    </html>
+    """.format(player, insult)
+
+    
+
+
+
+
 if __name__ == "__main__":
     # debug=True gives us error messages in the browser and also "reloads"
     # our web app if we change the code.
     app.run(debug=True, host="0.0.0.0")
+
+
+
